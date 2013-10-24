@@ -1,0 +1,14 @@
+%h2= I18n.t('title', {:scope => 'devise.otp.tokens.recovery'})
+%p= I18n.t('explain', {:scope => 'devise.otp.tokens.recovery'})
+
+%table
+  %caption
+  %thead
+    %tr
+      %th= I18n.t('sequence', {:scope => 'devise.otp.tokens.recovery'})
+      %th= I18n.t('code', {:scope => 'devise.otp.tokens.recovery'})
+  %tbody
+    - resource.next_otp_recovery_tokens.each do |seq, code|
+      %tr
+        %td= seq
+        %td= code
